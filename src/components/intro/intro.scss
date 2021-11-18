@@ -1,0 +1,245 @@
+@use "sass:math";
+.intro {
+  background-color: $orangeColor300;
+  position: relative;
+  @media (min-width: $s+px) {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -35%;
+      width: 100vw;
+      height: 100%;
+      background-color: $orangeColor500;
+    }
+  }
+  // .intro__container
+  &__container {
+    @include adaptive-value("margin-bottom", 44, 20, 0);
+    @include adaptive-value("padding-top", 120, 60, 1);
+    display: -webkit-box;
+    @media (max-width: $s+px) {
+      flex-direction: column-reverse;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  // .intro__card-block
+
+  &__card-block {
+    position: relative;
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(31px);
+
+    flex: 0 0 45%;
+    z-index: 10;
+    @include adaptive-value("margin-bottom", 80, 40, 1);
+    @media (min-width: $m+px) {
+      flex: 0 0 math.div(494, 1290) * 100%;
+    }
+    @media (min-width: $s+px) {
+      padding: 60px;
+    }
+  }
+
+  // .intro__card
+
+  &__card {
+    @media (max-width: $s+px) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      margin-top: 2rem;
+    }
+  }
+
+  // .intro__slider-block
+
+  &__slider-block {
+  }
+}
+
+.intro-card {
+  /* Note: backdrop-filter has minimal browser support */
+  // .intro-card__title
+
+  &__title {
+    font-style: normal;
+    font-weight: bold;
+    @include adaptive-value("font-size", 56, 26, 500);
+    line-height: 120%;
+    color: $textColor;
+    margin-bottom: 1rem;
+  }
+
+  // .intro-card__text
+
+  &__text {
+    font-style: normal;
+    font-weight: 500;
+    @include adaptive-value("font-size", 20, 16, 1);
+    line-height: 150%;
+    color: $grayColor400;
+  }
+
+  // .intro-card__button
+
+  &__button {
+    @include adaptive-value("margin-top", 48, 24, 1);
+    width: 100%;
+    @include adaptive-value("padding-top", 24, 16, 1);
+    @include adaptive-value("padding-bottom", 24, 16, 1);
+  }
+}
+.slider-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex: 1 1 auto;
+  // .slider-block__controls
+
+  &__controls {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: 22px;
+    width: 100%;
+    @media (min-width: $s+px) {
+      padding-left: 32px;
+      display: flex;
+    }
+  }
+
+  // .slider-block__pagination
+
+  &__pagination {
+    position: relative;
+  }
+
+  // .slider-block__arrows
+
+  &__arrows {
+    display: flex;
+  }
+
+  // .slider-block__arrow-left
+
+  &__arrow-left {
+  }
+
+  // .slider-block__arrow-right
+
+  &__arrow-right {
+    margin-left: 0.5rem;
+  }
+
+  // .slider-block__swiper
+
+  &__swiper {
+    min-width: 0;
+    position: relative;
+    width: 100%;
+  }
+
+  // .slider-block__slide
+
+  &__slide {
+    width: 100%;
+    height: 100%;
+  }
+
+  // .slider-block__image
+
+  &__image {
+    padding-top: 77.3%;
+    @media (min-width: $xs+px) {
+      padding-top: 66.3%;
+    }
+
+    & img {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  // .slider-block__box
+
+  &__box {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    @media (min-width: $s+px) {
+      bottom: 10%;
+      right: 10%;
+      left: auto;
+    }
+  }
+}
+
+.blur-small-box {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(0px);
+  max-width: 294px;
+  width: 100%;
+  text-align: start;
+  @media (min-width: $s+px) {
+    backdrop-filter: blur(31px);
+  }
+  // .blur-small-box__container
+  &__container {
+    display: block;
+    @include adaptive-value("padding", 24, 10, 1);
+  }
+  // .blur-small-box__title
+
+  &__title {
+    font-style: normal;
+    font-weight: 600;
+    @include adaptive-value("font-size", 28, 20, 1);
+    line-height: 120%;
+    color: $textColor;
+  }
+
+  // .blur-small-box__text
+
+  &__text {
+    font-style: normal;
+    font-weight: 500;
+    @include adaptive-value("font-size", 16, 14, 1);
+    line-height: 150%;
+    color: $grayColor400;
+  }
+
+  // .blur-small-box__footer
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  // .blur-small-box__price
+
+  &__price {
+    font-style: normal;
+    font-weight: 600;
+    @include adaptive-value("font-size", 20, 16, 1);
+    line-height: 150%;
+    color: $textColor;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  // .blur-small-box__button
+
+  &__button {
+  }
+}
+
+.swiper-wrapper {
+}
+.swiper-slide {
+}

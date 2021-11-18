@@ -1,0 +1,77 @@
+.popup-settings {
+    // .popup-settings__container
+    &__container {
+    }
+    // .popup-settings_box
+
+    &__box {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+        gap: 1rem;
+    }
+    // .popup-settings__close
+
+    &__close {
+        width: 1.875rem;
+        height: 1.875rem;
+        position: absolute;
+        top: 1.25rem;
+        right: 1.25rem;
+        @media (min-width: $xs+px) {
+            top: -1.25rem;
+            right: -1.25rem;
+            &::before,
+            &::after {
+                background-color: $whiteColor;
+            }
+        }
+    }
+
+    // .popup-settings__avatar
+
+    &__avatar {
+        display: none;
+    }
+
+    // .popup-settings__avatar-image
+
+    &__avatar-image {
+    }
+
+    // .popup-settings__upload
+
+    &__upload {
+    }
+
+    // .popup-settings__upload-input
+
+    &__upload-input {
+    }
+
+    // .popup-settings__intro
+
+    &__intro {
+        // display: none;
+    }
+
+    // .popup-settings__title
+
+    &__title {
+        font-style: normal;
+        font-weight: 700;
+        @include adaptive-value("font-size", 26, 20, 1);
+        line-height: 120%;
+        color: $textColor;
+    }
+
+    // .popup-settings__intro-button
+
+    &__intro-button {
+        min-width: 150px;
+        @media (max-width: $xs+px) {
+            width: 100%;
+        }
+    }
+}

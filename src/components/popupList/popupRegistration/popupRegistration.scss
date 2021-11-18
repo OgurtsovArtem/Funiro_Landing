@@ -1,0 +1,28 @@
+.popup-registration {
+    // .popup-registration__container
+    &__container {
+        width: 380px;
+    }
+    // .popup-registration__form
+    &__form {
+        transition: 0.5s;
+        &_registration {
+        }
+    }
+    // .popup-registration__close
+    &__close {
+        width: 1.875rem;
+        height: 1.875rem;
+        position: absolute;
+        top: 1.25rem;
+        right: 1.25rem;
+        @media (min-width: $xs+px) {
+            top: -1.25rem;
+            right: -1.25rem;
+            &::before,
+            &::after {
+                background-color: $whiteColor;
+            }
+        }
+    }
+}

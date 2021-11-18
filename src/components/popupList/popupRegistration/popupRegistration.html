@@ -1,0 +1,28 @@
+<section class="popup-registration _popup" data-popup-name="popup-registration">
+    <div class="popup-registration__container _popup-contianer">
+        <button class="popup-registration__close _popup-close _close-button"></button>
+        <form name="registration"
+            class="popup-registration__form popup-registration__form_registration entry-form _change-form"
+            data-change-form='registration'>
+            <legend class="entry-form__legend">Registration</legend>
+            <fieldset class="entry-form__container">
+                <label class="entry-form__lable" for="sign-up-email">Email</label>
+                <input class="entry-form__input" id="sign-up-email" type="email" autocomplete="email" required>
+                <label class="entry-form__lable" for="sign-up-name">Name</label>
+                <input class="entry-form__input" id="sign-up-name" type="text" autocomplete="username">
+                <label class="entry-form__lable" for="sign-up-password">Password</label>
+                <input class="entry-form__input" id="sign-up-password" type="password" autocomplete="new-password"
+                    required>
+                <label class="entry-form__lable" for="sign-up-repeat-password">Repeat Password</label>
+                <input class="entry-form__input" id="sign-up-repeat-password" type="password"
+                    autocomplete="new-password" required>
+            </fieldset>
+            <button type="submit" class="entry-form__button button" disabled>Registration</button>
+            <div class="entry-form__sub-container">
+                <p class="entry-form__text">or</p>
+                <button type="button" class="entry-form__button-changeform _popup-btn"
+                    data-popup-name="popup-login">Login</button>
+            </div>
+        </form>
+    </div>
+</section>

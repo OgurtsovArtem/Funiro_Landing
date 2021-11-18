@@ -1,0 +1,274 @@
+@import "./constants.scss";
+
+// ..........................BUTTONS..............................
+.button {
+  font-family: $fontFamily, Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 150%;
+  background-color: $mainButtonColor;
+  color: $whiteColor;
+  padding: 0.75rem;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+.button_white {
+  background-color: $whiteColor;
+  color: $orangeColor700;
+  border: 1px solid $orangeColor700;
+}
+
+.button:disabled,
+.button[disabled] {
+  background-color: $disabledButtonColor;
+  color: $blackColor;
+  cursor: default;
+  border: none;
+}
+.button:disabled:hover,
+.button[disabled]:hover {
+  box-shadow: none;
+  opacity: 1;
+}
+.button {
+  @media (any-hover: hover) {
+    &:hover {
+      opacity: 0.9;
+      box-shadow: 0 5px 10px rgb(0 0 0 / 20%);
+    }
+  }
+}
+
+._close-button {
+  width: 1.875rem;
+  height: 1.875rem;
+  position: relative;
+  transition: 0.3s;
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 0.0625rem;
+    background-color: $blackColor;
+  }
+  &::before {
+    transform: rotate(45deg);
+  }
+  &::after {
+    transform: rotate(-45deg);
+  }
+  @media (any-hover: hover) {
+    &:hover {
+      opacity: 0.5;
+      transform: rotate(90deg);
+    }
+  }
+}
+
+// ......................SWIPER COMPONENTS..........................
+.circle-button {
+  border-radius: 50%;
+  background-color: $orangeColor700;
+  color: $whiteColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.circle-button_white {
+  color: $orangeColor700;
+  background-color: $whiteColor;
+  box-shadow: 0px 4px 14px 1px rgba(0, 0, 0, 0.16);
+}
+.swiper-pagination {
+  display: flex;
+  position: relative;
+  .swiper-pagination-bullet {
+    background-color: transparent;
+    display: flex;
+    cursor: pointer;
+    flex: 0 0 27px;
+    height: 27px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin: 2px 0px;
+    &:not(:last-child) {
+      margin-right: 0.85rem;
+    }
+    &::after {
+      content: "";
+      width: 11px;
+      height: 11px;
+      background-color: $grayColor400;
+      border-radius: 50%;
+      transition: background-color 0.3s ease-in-out;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 1px solid $orangeColor700;
+      transition: 0.3s;
+      transform: scale(0);
+    }
+  }
+  .swiper-pagination-bullet-active {
+    background-color: transparent;
+    &::before {
+      transform: scale(1);
+    }
+    &::after {
+      background-color: $orangeColor700;
+    }
+  }
+}
+.swiper-button_left {
+  transform: rotate(90deg);
+  @include adaptive-value("font-size", 14, 10, 1);
+  @include adaptive-value("width", 48, 30, 1);
+  @include adaptive-value("height", 48, 30, 1);
+}
+.swiper-button_right {
+  transform: rotate(-90deg);
+  @include adaptive-value("font-size", 14, 10, 1);
+  @include adaptive-value("width", 48, 30, 1);
+  @include adaptive-value("height", 48, 30, 1);
+}
+
+// ......................TECHNICAL CLASSES..........................
+._container {
+  max-width: $maxWidthContainer;
+  width: 100%;
+  padding: 0px 1rem;
+  margin: 0 auto;
+}
+._flex {
+  display: flex;
+}
+._hover {
+  @media (any-hover: hover) {
+    &:hover {
+      box-shadow: 0 5px 10px rgb(0 0 0 / 20%);
+    }
+  }
+}
+._fixed {
+  overflow: hidden;
+}
+// ._accent {
+//   color: $accentColor;
+// }
+
+// ..........................ANIMATION..............................
+._animation {
+  opacity: 0;
+  transform: translate(0, 120%);
+  transition: 0.7s;
+}
+._animation._active-animation {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+// ............................BURGER................................
+.burger {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.burger span {
+  display: block;
+  position: absolute;
+  height: 0.3rem;
+  width: 100%;
+  background-color: $burgerColor;
+  border-radius: 3rem;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+.burger span:nth-child(1) {
+  top: 0px;
+}
+
+.burger span:nth-child(2),
+.burger span:nth-child(3) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.burger span:nth-child(4) {
+  top: 100%;
+  transform: translateY(-100%);
+}
+// Active_burger
+.burger._active span:nth-child(1) {
+  top: 100%;
+  transform: translateY(-100%);
+  width: 0%;
+  left: 50%;
+}
+
+.burger._active span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+.burger._active span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.burger._active span:nth-child(4) {
+  top: 100%;
+  transform: translateY(-100%);
+  width: 0%;
+  left: 50%;
+}
+// ...........................POPUP................................
+
+._popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba($color: #000000, $alpha: 0.6);
+  z-index: 5000;
+  @media (min-width: $xs+px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  &._active {
+    display: flex;
+  }
+  display: none;
+}
+._popup-contianer {
+  background-color: $whiteColor;
+  padding: 1.6rem;
+  border-radius: 2rem;
+  position: relative;
+  @media (max-width: $xs+px) {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0;
+  }
+}

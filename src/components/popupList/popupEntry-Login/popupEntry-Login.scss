@@ -1,0 +1,115 @@
+.popup-login {
+    // .popup-login__container
+    &__container {
+        width: 300px;
+    }
+
+    // .popup-login__form
+    &__form {
+        transition: 0.5s;
+        &_login {
+        }
+    }
+
+    // .popup-login__close
+
+    &__close {
+        width: 1.875rem;
+        height: 1.875rem;
+        position: absolute;
+        top: 1.25rem;
+        right: 1.25rem;
+        @media (min-width: $xs+px) {
+            top: -1.25rem;
+            right: -1.25rem;
+            &::before,
+            &::after {
+                background-color: $whiteColor;
+            }
+        }
+    }
+}
+
+.entry-form {
+    // .entry-form__legend
+    width: 100%;
+    &__legend {
+        font-style: normal;
+        font-weight: 700;
+        @include adaptive-value("font-size", 26, 20, 1);
+        line-height: 120%;
+        color: $textColor;
+        margin-bottom: 1rem;
+    }
+
+    // .entry-form__container
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    // .entry-form__lable
+
+    &__lable {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 0.8rem;
+        line-height: 100%;
+        color: $grayColor400;
+        margin-top: 1rem;
+    }
+
+    // .entry-form__input
+
+    &__input {
+        border-bottom: 1px solid $orangeColor700;
+        margin-top: 0.5rem;
+        padding: 0.3rem;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 100%;
+    }
+
+    // .entry-form__button
+
+    &__button {
+        width: 100%;
+        margin-top: 1rem;
+        &:disabled {
+            font-weight: bold;
+        }
+    }
+    // .entry-form__sub-container
+    &__sub-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    // .entry-form__text
+
+    &__text {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 0.8rem;
+        line-height: 100%;
+        color: $grayColor400;
+        margin-top: 1rem;
+        display: inline;
+    }
+
+    // .entry-form__button-changeform
+
+    &__button-changeform {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 0.8rem;
+        line-height: 100%;
+        color: $orangeColor700;
+        margin-top: 1rem;
+        text-decoration: underline;
+    }
+}

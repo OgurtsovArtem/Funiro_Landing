@@ -1,0 +1,139 @@
+@use "sass:math";
+.footer {
+  // .footer__container
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include adaptive-value("gap", 80, 40, 768);
+    @include adaptive-value("padding-top", 80, 40, 768);
+    @include adaptive-value("padding-bottom", 50, 20, 768);
+    border-top: 1px solid $grayColor300;
+    @media (min-width: $m+px) {
+      grid-template-columns: repeat(3, auto);
+    }
+    @media (min-width: $s+px) {
+      grid-template-columns: repeat(2, auto);
+    }
+  }
+
+  // .footer__block
+
+  &__block {
+    @media (max-width: $m+px) {
+      grid-row-start: 3;
+    }
+  }
+
+  // .footer__navigation
+  &__navigation {
+    // display: grid;
+    // grid-template-columns: repeat(3, auto);
+    display: flex;
+    justify-content: space-between;
+    @include adaptive-value("gap", 80, 40, 768);
+    @media (min-width: $s+px) and (max-width: $m+px) {
+      grid-row-start: 2;
+      grid-column-end: span 2;
+    }
+    @media (max-width: $xs+px) {
+      flex-direction: column;
+    }
+  }
+
+  // .footer__send
+  &__send {
+    @media (min-width: $s+px) and (max-width: $m+px) {
+      justify-self: end;
+    }
+    @media (max-width: $m+px) {
+      grid-row-start: 2;
+    }
+  }
+
+  // .footer__title
+
+  &__title {
+    font-style: normal;
+    font-weight: bold;
+    @include adaptive-value("font-size", 24, 20, 1);
+    line-height: math.div(29, 24) * 100%;
+    color: $blackColor;
+    margin-bottom: 1rem;
+  }
+
+  // .footer__text
+
+  &__text {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 150%;
+    color: $grayColor500;
+    @media (min-width: $m+px) {
+      max-width: 250px;
+    }
+  }
+
+  // .footer__link
+
+  &__link {
+    display: inline-flex;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 150%;
+    color: $grayColor500;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    &::before {
+      margin-right: 0.625rem;
+    }
+  }
+
+  // .footer__list
+
+  &__list {
+  }
+
+  // .footer__item
+
+  &__item {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 150%;
+    color: $grayColor500;
+    margin-bottom: 1rem;
+    & .footer__link {
+      font-weight: 500;
+      margin-top: 0;
+    }
+  }
+
+  // .footer__form
+
+  &__form {
+    display: flex;
+  }
+
+  // .footer__form-input
+
+  &__form-input {
+    background-color: $grayColor100;
+    width: 100%;
+    padding: 0.625rem;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 150%;
+    color: $grayColor400;
+  }
+
+  // .footer__form-button
+
+  &__form-button {
+    flex: 0 0 2.9rem;
+  }
+}

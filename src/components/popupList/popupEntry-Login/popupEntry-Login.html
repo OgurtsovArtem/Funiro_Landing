@@ -1,0 +1,21 @@
+<section class="popup-login _popup" data-popup-name="popup-login">
+    <div class="popup-login__container _popup-contianer">
+        <button class="popup-login__close _popup-close _close-button"></button>
+        <form name="login" class="popup-login__form popup-login__form_login entry-form _active">
+            <legend class="entry-form__legend">Sign-in</legend>
+            <fieldset class="entry-form__container">
+                <label class="entry-form__lable" for="sign-in-login">Login</label>
+                <input class="entry-form__input" id="sign-in-login" type="email" autocomplete="email" required>
+                <label class="entry-form__lable" for="sign-in-password">Password</label>
+                <input class="entry-form__input" id="sign-in-password" type="password" autocomplete="current-password"
+                    required>
+            </fieldset>
+            <button type="submit" class="entry-form__button button button_white" disabled>Login</button>
+            <div class="entry-form__sub-container">
+                <p class="entry-form__text">or</p>
+                <button type="button" class="entry-form__button-changeform _popup-btn"
+                    data-popup-name="popup-registration">Registration</button>
+            </div>
+        </form>
+    </div>
+</section>

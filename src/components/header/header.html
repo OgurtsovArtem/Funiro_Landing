@@ -1,0 +1,67 @@
+<header class="header">
+  <div class="header__wrapper _container">
+    <div class="header__container">
+      <button class="header__burger burger">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="header__body">
+        <a href="/" class="header__logo">Funiro.</a>
+        <nav class="header__menu menu">
+          <ul class="menu__list">
+            <li class="menu__item">
+              <a href="#" class="menu__link">Products</a>
+              <button type="button" class="menu__button _icon-arrow-down"></button>
+              <ul class="menu__sub-list">
+                <li class="menu__sub-items"><a href="#" class="menu__link">Cabinets </a></li>
+                <li class="menu__sub-items"><a href="#" class="menu__link">Sofas</a></li>
+                <li class="menu__sub-items"><a href="#" class="menu__link">Inspirations chairs</a></li>
+              </ul>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">Rooms</a>
+              <button type="button" class=" _icon-arrow-down menu__button"></button>
+              <ul class="menu__sub-list">
+                <li class="menu__sub-items"><a href="#" class="menu__link">Bedrooms</a></li>
+                <li class="menu__sub-items"><a href="#" class="menu__link">Hallways</a></li>
+                <li class="menu__sub-items"><a href="#" class="menu__link">Halls</a></li>
+              </ul>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">Inspirations</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header__search search">
+        <button type="button" class="search__button _icon-search"></button>
+        <form action="#" class="search__from _no-validate">
+          <button type="submit" class="search__from-icon _icon-search"></button>
+          <input class="search__form-input" name="search" type="text" autocomplete="off"
+            placeholder="Search for minimalist chair" required>
+        </form>
+      </div>
+      <div class="header__user-block user-block">
+        <div class="user-block__favorite">
+          <button class="user-block__favorite-icons _icon-favorite"></button>
+          <div class="user-block__favorite-list"></div>
+        </div>
+        <div class="user-block__cart">
+          <button class="user-block__cart-icons _icon-cart"></button>
+          <div class="user-block__cart-list"></div>
+        </div>
+        <button class="user-block__settings _popup-btn" data-popup-name="popup-settings">
+          <svg class="user-block__settings-icon">
+            <use xlink:href="../images/icons/sprite.svg#setting"></use>
+          </svg>
+        </button>
+        <button class="user-block__profile">
+          <img class="user-block__profile-avatar" src="../images/profile_user_avatar.svg" alt="profile-icon">
+
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
