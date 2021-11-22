@@ -461,7 +461,7 @@ var AddProducts = /*#__PURE__*/function () {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return fetch('./products.json', {
+                return fetch("./products.json", {
                   method: "GET"
                 });
 
@@ -531,15 +531,15 @@ var AddProducts = /*#__PURE__*/function () {
   }, {
     key: "addButton",
     value: function addButton() {
-      this.button.addEventListener('click', this.getProducts.bind(this));
+      this.button.addEventListener("click", this.getProducts.bind(this));
     }
   }]);
   return AddProducts;
 }();
 
 var ADD_PRODUCTS_SETTINGS = {
-  container: document.querySelector('.products__body'),
-  button: document.querySelector('.products__button')
+  container: document.querySelector(".products__body"),
+  button: document.querySelector(".products__button")
 };
 var addProducts = new AddProducts(ADD_PRODUCTS_SETTINGS);
 ;
