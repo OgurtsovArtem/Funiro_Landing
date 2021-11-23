@@ -144,6 +144,11 @@
   @include adaptive-value("height", 48, 30, 1);
 }
 
+._infinite-slider {
+  & .swiper-wrapper {
+    transition-timing-function: linear;
+  }
+}
 // ......................TECHNICAL CLASSES..........................
 ._container {
   max-width: $maxWidthContainer;

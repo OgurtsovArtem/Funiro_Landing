@@ -1,4 +1,4 @@
-class Header {
+export default class Header {
   constructor({
     searchButton,
     searchForm,
@@ -33,11 +33,4 @@ class Header {
   }
 }
 
-const HEADER_SETTINGS = {
-  searchButton: document.querySelector(".search__button"),
-  searchForm: document.querySelector(".search__from"),
-  subMenuButtons: [...document.querySelectorAll(".menu__button")],
-  menuClass: ".menu__item",
-};
 
-const searchForm = new Header(HEADER_SETTINGS);

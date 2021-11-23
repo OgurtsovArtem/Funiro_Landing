@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 /* eslint-disable no-dupe-keys */
 const introSlider = new Swiper(".slider-block__swiper", {
   // Optional parameters
@@ -31,7 +33,7 @@ const compilationSlider = new Swiper(".compilation-slider", {
   loop: true,
   observer: true,
   observerParents: true,
-  slidesPerView: 'auto',
+  slidesPerView: "auto",
   spaceBetween: 24,
   watchOverflow: true,
   loop: true,
@@ -67,8 +69,8 @@ const compilationSlider = new Swiper(".compilation-slider", {
     780: {
       slidesPerView: "auto",
       spaceBetween: 24,
-    }
-  }
+    },
+  },
 });
 
 const blogSlider = new Swiper(".blog-slider__items", {
@@ -113,6 +115,21 @@ const blogSlider = new Swiper(".blog-slider__items", {
     780: {
       slidesPerView: 3,
       spaceBetween: 32,
-    }
-  }
+    },
+  },
+});
+
+const gallary = new Swiper(".gallary__slider", {
+  slidesPerView: "auto",
+  loop: true,
+  speed: 50000,
+  watchOverflow: true,
+  observer: true,
+  slidesOffsetAfter: 0,
+  observerParents: true,
+  spaceBetween: 16,
+  autoplay: {
+    enabled: true,
+    delay: 0,
+  },
 });

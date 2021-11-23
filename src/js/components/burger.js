@@ -1,4 +1,4 @@
-class Burger {
+export default class Burger {
   constructor({
     burger,
     menu,
@@ -17,9 +17,3 @@ class Burger {
     this.burger.addEventListener("click", this.toggle.bind(this));
   }
 }
-const BURGER_CONSTANT = {
-  burger: document.querySelector(".burger"),
-  menu: document.querySelector(".menu"),
-};
-
-const burger = new Burger(BURGER_CONSTANT);
