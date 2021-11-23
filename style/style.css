@@ -370,6 +370,12 @@ video {
   height: 3rem;
 }
 
+._infinite-slider .swiper-wrapper {
+  -webkit-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+  transition-timing-function: linear;
+}
+
 ._container {
   max-width: 77.5rem;
   width: 100%;
@@ -1494,6 +1500,8 @@ video {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  height: 780px;
+  width: 1920px;
   gap: 16px;
 }
 
