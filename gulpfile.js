@@ -12,16 +12,19 @@ const autoprefixer = require("gulp-autoprefixer");
 const groupmedia = require("gulp-group-css-media-queries");
 const cleancss = require("gulp-clean-css");
 const rename = require("gulp-rename");
-const uglify = require("gulp-uglify-es").default;
-const babel = require("gulp-babel");
-
+const ghPages = require("gh-pages");
 const imagemin = require("gulp-imagemin");
 const webp = require("gulp-webp");
 const webphtml = require("gulp-webp-html");
-// const webpcss = require("gulp-webp-css");
 const svgsprite = require("gulp-svg-sprite");
 const ttf2woff = require("gulp-ttf2woff");
 const ttf2woff2 = require("gulp-ttf2woff2");
+const webpack = require("webpack-stream");
+
+// const uglify = require("gulp-uglify-es").default;
+// const babel = require("gulp-babel");
+
+// const webpcss = require("gulp-webp-css");
 
 // Названия папок
 const project_folder = "dist";
@@ -42,7 +45,7 @@ const path = {
   src: {
     html: [`${source_folder}/pages/*.html`, `!${source_folder}/pages/_*.html`],
     style: `${source_folder}/style/style.scss`,
-    js: `${source_folder}/js/script.js`,
+    js: `./${source_folder}/js/script.js`,
     images: `${source_folder}/images/**/*.+(png|jpg|gif|ico|svg|webp|jpeg)`,
     fonts: `${source_folder}/fonts/*.ttf`,
     video: `${source_folder}/video/*`,
@@ -109,20 +112,9 @@ function styleHandler() {
 
 function jsHandler() {
   return src(path.src.js)
-    .pipe(fileinclude())
-    .pipe(
-      babel({
-        presets: ["@babel/env"],
-        plugins: ['@babel/plugin-transform-runtime']
-      }),
-    )
-    .pipe(dest(path.build.js))
-    .pipe(uglify())
-    .pipe(
-      rename({
-        extname: ".min.js",
-      }),
-    )
+    .pipe(webpack({
+      config: require("./webpack.config.js"),
+    }))
     .pipe(dest(path.build.js))
     .pipe(browsersync.stream({ stream: true }));
 }
@@ -231,6 +223,9 @@ gulp.task("create-svg-sprite", () => gulp.src([`${source_folder}/icons/svg-sprit
     }),
   )
   .pipe(dest(path.build.images)));
+
+gulp.task("deploy", () => ghPages.publish("dist", (err) => { console.log(err); }));
+
 // Сценарии выполнения
 const build = gulp.series(
   clean,
