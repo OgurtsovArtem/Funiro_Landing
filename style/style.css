@@ -529,6 +529,41 @@ video {
   width: 100%;
   z-index: 100;
   height: 120px;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.header._scroll .header__wrapper {
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.header._scroll .header__container {
+  min-height: 5.625rem;
+}
+
+.header._scroll .search__form-input {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  border-bottom: 1px solid #000000;
+}
+
+.header._scroll .search__form-input:focus,
+.header._scroll .search__form-input:active {
+  border-bottom: none;
+}
+
+.header__wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .header__container {
@@ -541,6 +576,9 @@ video {
   min-height: 7.5rem;
   position: relative;
   padding: 4px 0;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .header__body {
@@ -661,6 +699,9 @@ video {
 
 .search__form-input {
   width: 100%;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .user-block {
@@ -825,6 +866,7 @@ video {
 .intro {
   background-color: #fcf8f3;
   position: relative;
+  overflow-x: hidden;
 }
 
 .intro__container {
@@ -1254,6 +1296,7 @@ video {
   background-color: #fcf8f3;
   padding-top: 44px;
   padding-bottom: 44px;
+  overflow-x: hidden;
 }
 
 .compilation__container {
@@ -1474,6 +1517,10 @@ video {
   -ms-flex-pack: center;
   justify-content: center;
   margin-top: 2.875rem;
+}
+
+.gallary__container {
+  overflow-x: hidden;
 }
 
 .gallary__subtitle {
@@ -1752,14 +1799,12 @@ video {
 body {
   height: 100%;
   color: #3a3a3a;
-  overflow-x: hidden;
   font-size: 16px;
   font-family: gilroy -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 html {
   height: 100%;
-  overflow-x: hidden;
   font-size: 16px;
 }
 
@@ -2015,6 +2060,14 @@ html {
     height: calc(
         30px +
           18 *
+          ((100vw - 280px) / 1640)
+      );
+  }
+
+  .header._scroll .header__container {
+    min-height: calc(
+        40px +
+          50 *
           ((100vw - 280px) / 1640)
       );
   }
@@ -2339,6 +2392,10 @@ html {
 
   .swiper-button_right {
     height: 30px;
+  }
+
+  .header._scroll .header__container {
+    min-height: 40px;
   }
 
   .header__container {
