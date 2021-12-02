@@ -528,6 +528,7 @@ video {
   left: 0;
   width: 100%;
   z-index: 100;
+  height: 120px;
 }
 
 .header__container {
@@ -1491,6 +1492,11 @@ video {
   line-height: 120%;
   color: #3a3a3a;
   text-align: center;
+}
+
+.gallary__slider {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .gallary__content {
