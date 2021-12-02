@@ -204,7 +204,7 @@ function watchFiles() {
   gulp.watch([path.watch.video], videoHandler);
   gulp.watch([path.watch.js], jsHandler);
   gulp.watch([path.watch.js], vendorJS);
-  gulp.watch([path.watch.js], vendorCSS);
+  gulp.watch([path.watch.libsStyle], vendorCSS);
 }
 
 function clean() {
