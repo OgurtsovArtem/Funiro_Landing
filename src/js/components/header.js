@@ -33,8 +33,7 @@ export default class headerHeightHeader {
     headerObserver.observe(this.header);
   }
 
-  addScrollClass(entries, observer) {
-    console.log(entries[0].isIntersecting, observer);
+  addScrollClass(entries) {
     if (entries[0].isIntersecting) {
       this.header.classList.remove("_scroll");
     } else {
@@ -47,8 +46,6 @@ export default class headerHeightHeader {
     this.subMenuButtons.forEach((button) => {
       button.addEventListener("click", this.subMenuHandler.bind(this));
     });
-    document.addEventListener("scroll", () => {
-      return console.log("asdasd");
-    });
+    document.addEventListener("scroll", this.scroll.bind(this));
   }
 }
