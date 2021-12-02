@@ -528,7 +528,7 @@ video {
   left: 0;
   width: 100%;
   z-index: 100;
-  height: 120px;
+  height: 70px;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
@@ -2730,6 +2730,10 @@ html {
     -ms-flex-align: center;
     align-items: center;
     border-radius: 0;
+  }
+
+  .header {
+    height: 10px;
   }
 
   .footer__navigation {
