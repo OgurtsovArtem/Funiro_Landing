@@ -7,8 +7,8 @@ export default class Popup {
     this.popupDataName = popupDataName;
     this.popupCloseBtnClass = popupCloseBtnClass;
 
-    this.closeBtn;
-    this.popup;
+    this.closeBtn = null;
+    this.popup = null;
 
     // Сохраняет ссылку на обьект для удаления слушателя
     this.closeLink = this.close.bind(this);

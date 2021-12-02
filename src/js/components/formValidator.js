@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 export default class FormValidator {
   constructor({ form }) {
     this.form = form;
@@ -19,7 +20,6 @@ export default class FormValidator {
     if (input.validity.typeMismatch === true) {
       return false;
     }
-
     return true;
   }
 

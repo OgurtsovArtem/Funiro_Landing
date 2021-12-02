@@ -127,6 +127,7 @@ const gallary = new Swiper(".gallary__slider", {
   observer: true,
   slidesOffsetAfter: 0,
   observerParents: true,
+  allowTouchMove: false,
   spaceBetween: 16,
   autoplay: {
     enabled: true,

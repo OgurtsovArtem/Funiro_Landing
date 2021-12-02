@@ -3,6 +3,7 @@ const HEADER_SETTINGS = {
   searchForm: document.querySelector(".search__from"),
   subMenuButtons: [...document.querySelectorAll(".menu__button")],
   menuClass: ".menu__item",
+  header: document.querySelector(".header"),
 };
 
 export default HEADER_SETTINGS;

@@ -4,7 +4,7 @@ export default class ChangeForm {
     this.formList = formList;
     this.dataName = dataName;
 
-    this.form;
+    this.form = null;
     this.listener();
   }
 
