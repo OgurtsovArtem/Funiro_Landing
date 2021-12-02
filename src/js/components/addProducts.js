@@ -26,11 +26,6 @@ export default class AddProducts {
       console.log(err);
     }
   }
-  // Получаем json с сервера на N элементов
-  // Перебираем его и выводим на экран заданное кол-во(showToInit)
-  // При клике на кнопку выводим заданное кол-во (showOnclick)
-  // И запоминаем кол-во выведенных элементов (countCard)
-  // При достижении N отправляем запрос на следущее кол-во N + N элементов
   filterArrayOnClick() {
     if (this.countCard < this.json.length) {
 
