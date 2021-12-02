@@ -25,7 +25,11 @@
     color: $textColor;
     text-align: center;
   }
-
+  // .gallary__slider
+  &__slider {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+  }
   // .gallary__content
 
   &__content {
