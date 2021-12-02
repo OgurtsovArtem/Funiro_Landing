@@ -2,6 +2,7 @@
 .intro {
   background-color: $orangeColor300;
   position: relative;
+  overflow-x: hidden;
   @media (min-width: $s+px) {
     &::before {
       content: "";
