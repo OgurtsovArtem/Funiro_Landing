@@ -121,6 +121,7 @@ const blogSlider = new Swiper(".blog-slider__items", {
 
 const gallary = new Swiper(".gallary__slider", {
   slidesPerView: "auto",
+  centeredSlides: true,
   loop: true,
   speed: 50000,
   watchOverflow: true,
