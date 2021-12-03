@@ -1,9 +1,10 @@
 export default class AddProducts {
-  constructor({ container, button, showToInit = 1, showOnclick = 3, }) {
+  constructor({ container, button, showToInit = 1, showOnclick = 3, }, Popup) {
     this.container = container;
     this.button = button;
     this.showToInit = showToInit;
     this.showOnclick = showOnclick;
+    this.Popup = Popup;
 
     this.countCard = showToInit;
     this.json = {};
@@ -67,7 +68,7 @@ export default class AddProducts {
             <button type="button" class="product-card__button-like _icon-favorite">Like</button>
         </div>
         </div>
-        <div class="product-card__footer">
+        <div class="product-card__footer _popup-btn" data-popup-name='popup-card-detail'>
         <h2 class="product-card__title">${card?.title}</h2>
         <p class="product-card__subtitle">${card?.text}</p>
         <div class="product-card__price">
@@ -79,6 +80,9 @@ export default class AddProducts {
     `
 
     this.container.insertAdjacentHTML('beforeend', templateCard.trim());
+
+    this.Popup.render()
+    console.log( )
   }
 
   addButton() {

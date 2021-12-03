@@ -16,17 +16,26 @@ import POPUP_SETTINGS from "./contstants/popupSettings";
 import Profile from "./components/profile";
 import PROFILE_SETTINGS from "./contstants/profileSettings";
 
+import DomObserver from "./components/DomObserver";
+
 import Swiper from "./libs/swiper";
+
+const popup = new Popup();
+
+const target = document.querySelector('.products__body');
+
+const domObserver = new DomObserver(target);
+domObserver.observe()
 
 const header = new Header(HEADER_SETTINGS);
 
-const addProducts = new AddProducts(ADD_PRODUCTS_SETTINGS);
+const addProducts = new AddProducts(ADD_PRODUCTS_SETTINGS, popup);
+
+
 
 const burger = new Burger(BURGER_CONSTANT);
 
 const loginValidator = new FormValidator(LOGIN_FORM_VALIDATOR_SETTINGS);
 const registrationValidator = new FormValidator(REGISTRATRATION_FORM_VALIDATOR_SETTINGS);
-
-const popup = new Popup(POPUP_SETTINGS);
 
 const profile = new Profile(PROFILE_SETTINGS);

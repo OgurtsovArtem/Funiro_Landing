@@ -1,18 +1,29 @@
 export default class Popup {
-  constructor({
-    openButton, popupList, popupDataName, popupCloseBtnClass,
-  }) {
-    this.openButton = openButton;
-    this.popupList = popupList;
-    this.popupDataName = popupDataName;
-    this.popupCloseBtnClass = popupCloseBtnClass;
+  constructor() {
+    // this.openButton = openButton;
+    // this.popupList = popupList;
+    // this.popupDataName = popupDataName;
+    // this.popupCloseBtnClass = popupCloseBtnClass;
+
+    this.openButton = null;
+    this.popupList = null;
+    this.popupDataName = null;
+    this.popupCloseBtnClass = null;
 
     this.closeBtn = null;
     this.popup = null;
 
     // Сохраняет ссылку на обьект для удаления слушателя
     this.closeLink = this.close.bind(this);
+    this.searchFormLink = this.searchForm.bind(this);
+    this.render();
+  }
 
+  render() {
+    this.openButton = [...document.querySelectorAll("._popup-btn")];
+    this.popupList = [...document.querySelectorAll("._popup")];
+    this.popupDataName = "data-popup-name"; // Передаем дата-атрибут
+    this.popupCloseBtnClass = "_popup-close"; // Передаем имя class'a
     this.listener();
   }
 
@@ -60,7 +71,10 @@ export default class Popup {
 
   listener() {
     this.openButton.forEach((button) => {
-      button.addEventListener("click", this.searchForm.bind(this));
+      if (button.getAttribute("has-listener") !== "true") {
+        button.setAttribute("has-listener", "true");
+        button.addEventListener("click", this.searchFormLink);
+      }
     });
   }
 }
