@@ -14,14 +14,16 @@
       box-shadow: 0 5px 10px rgb(0 0 0 / 20%);
     }
     .header__container {
-      @include adaptive-value("min-height", 90, 40, 1);
+      @include adaptive-value("min-height", 80, 40, 1);
     }
     .search__form-input {
-      transition: 0.3s;
-      border-bottom: 1px solid $blackColor;
-      &:focus,
-      &:active {
-        border-bottom: none;
+      @media (min-width: $s+px) {
+        transition: 0.3s;
+        border-bottom: 1px solid $blackColor;
+        &:focus,
+        &:active {
+          border-bottom: none;
+        }
       }
     }
   }
@@ -43,7 +45,8 @@
     align-items: center;
     @include adaptive-value("min-height", 120, 60, 1);
     position: relative;
-    padding: 4px 0;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
     transition: 0.3s;
   }
 
@@ -245,7 +248,6 @@
     padding: 0.75rem;
     background-color: $whiteColor;
     display: flex;
-
     @media (max-width: $s+px) {
       position: absolute;
       top: 100%;
@@ -257,6 +259,7 @@
       opacity: 0;
       transform: translate(1rem, 1rem);
       transition: all 0.3s ease-in-out;
+      box-shadow: 0 5px 10px rgb(0 0 0 / 20%);
 
       &._active {
         transform: translate(0, 0);
