@@ -60,8 +60,8 @@ export default class AddProducts {
     <div class="products__card product-card" data-id=${card?.id}>
         <div class="product-card__image">
         <img src="./images/products/${card?.image}" alt="card-image">
-        <span class="product-card__discount">${card?.discount}</span>
-        <span class="product-card__status">${card?.status}</span>
+        <span class="product-card__discount">${card?.labels?.type}</span>
+        <span class="product-card__status">${card?.labels?.value}</span>
         <div class="product-card__backside">
             <button type="button" class="product-card__button button">Add to cart</button>
             <button type="button" class="product-card__button-share _icon-share">Share</button>

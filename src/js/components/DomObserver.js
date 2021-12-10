@@ -9,6 +9,7 @@ export default class DomObserver {
     this.config = {
       childList: true,
       subtree: true,
+      characterData: true,
     };
 
     this.observer = new MutationObserver(this.callback);
