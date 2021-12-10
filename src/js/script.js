@@ -18,6 +18,12 @@ import PROFILE_SETTINGS from "./contstants/profileSettings";
 
 import DomObserver from "./components/DomObserver";
 
+import Count from "./components/count";
+import CARD_COUNT_SETTINGS from "./contstants/countSettings";
+
+import CalcPrice from "./components/calcPrice";
+import CALC_CARD_PRICE_SETTINGS from "./contstants/calcPriceSettings";
+
 import Swiper from "./libs/swiper";
 
 const popup = new Popup();
@@ -31,7 +37,8 @@ const header = new Header(HEADER_SETTINGS);
 
 const addProducts = new AddProducts(ADD_PRODUCTS_SETTINGS, popup);
 
-
+// const count = new Count(CARD_COUNT_SETTINGS);
+const calcPrive = new CalcPrice(CALC_CARD_PRICE_SETTINGS);
 
 const burger = new Burger(BURGER_CONSTANT);
 

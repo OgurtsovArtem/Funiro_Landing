@@ -135,3 +135,31 @@ const gallary = new Swiper(".gallary__slider", {
     delay: 0,
   },
 });
+
+const cardDetail = new Swiper(".popup-card__slider", {
+  slidesPerView: "auto",
+  loop: true,
+
+  speed: 2000,
+  watchOverflow: true,
+  observer: true,
+  grabCursor: true,
+  effect: "creative",
+  creativeEffect: {
+    prev: {
+      shadow: true,
+      origin: "left center",
+      translate: ["-5%", 0, -200],
+      rotate: [0, 100, 0],
+    },
+    next: {
+      origin: "right center",
+      translate: ["5%", 0, -200],
+      rotate: [0, -100, 0],
+    },
+  },
+  autoplay: {
+    enabled: true,
+    delay: 2000,
+  },
+});
