@@ -1,5 +1,51 @@
-<section class="popup-card _popup" data-popup-name='popup-card-detail'>
-  <div class="popup-card__container _popup-container">
+<div class="popup-card _popup" data-popup-name='popup-card-detail'>
+  <div class="popup-card__container _popup-contianer">
     <button class="popup-card__close _popup-close _close-button"></button>
+    <div class="popup-card__slider">
+      <div class="swiper-wrapper">
+        <div class="popup-card__card swiper-slide">
+          <div class="popup-card__image">
+            <img src="./images/products/05.jpg" alt="">
+          </div>
+        </div>
+        <div class="popup-card__card swiper-slide">
+          <div class="popup-card__image">
+            <img src="./images/products/04.jpg" alt="">
+          </div>
+        </div>
+        <div class="popup-card__card swiper-slide">
+          <div class="popup-card__image">
+            <img src="./images/products/03.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup-card__content">
+      <h2 class="popup-card__title">Pingky</h2>
+      <p class="popup-card__subtitle">Cute bed set</p>
+      <div class="popup-card__price-container">
+        <div class="popup-card__price"><span class="popup-card__current-price" data-price="6000">6.000</span> <span
+            class="popup-card__currency">$</span></div>
+        <div class="popup-card__price"><span class="popup-card__old-price">14.500</span> <span
+            class="popup-card__currency">$</span></div>
+      </div>
+
+      <p class="popup-card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum dolore quo aut eos
+        nostrum odio quod, quas magni sint velit praesentium architecto ut ipsum dicta, suscipit dignissimos modi
+        doloremque et!</p>
+      <div class="popup-card__box">
+        <div class="popup-card__share">
+          <button type="button" class="popup-card__button-share _icon-share"></button>
+          <button type="button" class="popup-card__button-like _icon-favorite"></button>
+        </div>
+        <div class="popup-card__quantity">
+          <button class="popup-card__button-more circle-button">+</button>
+          <input class="popup-card__count" type="number" value="2" min="1" max="298" step="1" data-step="1" required>
+          <button class="popup-card__button-less circle-button">-</button>
+        </div>
+        <button class="popup-card__button button">Add to cart</button>
+      </div>
+    </div>
   </div>
-</section>
+</div>
